@@ -33,4 +33,3 @@ Cada
 
 
 
-[1]: images/Microservices_Deployment.png
