@@ -82,7 +82,7 @@ Realizando 3 peticiones al balanceador vemos como este rota los servidores para 
 ![][13]
 ![][14]
 ## Punto 5  
-Si se quisiera agregar un microservicio al ambiente ya desplegador deberíamos entender dos conceptos importantes. El de paradigma reactivo, el de API Gateway y el de protocolo pubicador/subscriptor.  
+Si se quisiera agregar un microservicio al ambiente ya desplegador deberíamos entender dos conceptos importantes. El de paradigma reactivo y el de API Gateway.  
 El paradigma reactivo, establece una nueva forma de atender solicitudes y puede aplicarse tanto a la parte de servidor como a la de clientes. Se trata de responder sólo con lo solicitado de manera asíncrona y óptima.
 ![][15]  
 El API Gateway "es el único punto de entrada para todos los clientes. Algunas solicitudes son simplemente proxy/enrutadas al servicio apropiado. Gestiona otras solicitudes desplegándose a múltiples servicios". Esto quiere decir que usando el paradigma reactivo, los clientes le harán todas las solicitudes al API Gateway y este se encargará de redirigir las solicitudes al balanceador de carga para cada microservicio (en caso de que todos tengan un balanceador de carga).  
