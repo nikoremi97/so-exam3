@@ -22,9 +22,10 @@ El tercer parcial del curso sistemas operativos trata sobre la creación de serv
 **Figura 1.** Despliegue básico de microservicios
 
 ### Desarrollo  
-Se desplegó el siguiente esquema, se utilizó Flask como servicio web:  
+Se desplegó el siguiente esquema:  
 ![][1]  
-w
+Primero tenemos un **Balanceador de Carga** que hace peticiones a un servidor **Consul server**, el cual a su vez hace peticiones a tres **Consul Client** que prestan un microservicio similar. Para un posterior diferenciador de los servicios, modificamos un mensaje inicial, pero si se quisiera prestar el mismo microservicio mediante todos los servidores el microservicio debería ser idéntico.  
+
 
 
 
