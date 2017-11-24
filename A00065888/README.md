@@ -81,10 +81,13 @@ Realizando 3 peticiones al balanceador vemos como este rota los servidores para 
 ![][12]
 ![][13]
 ![][14]
+## Punto 5  
+
+
 
 ## Referencias
-https://www.upcloud.com/support/haproxy-load-balancer-centos/
-https://github.com/ICESI/so-microservices-python
+https://www.upcloud.com/support/haproxy-load-balancer-centos/  
+https://github.com/ICESI/so-microservices-python  
 https://github.com/ICESI/so-discovery-service/blob/master/README.md
 
 [1]: images/Microservices_Deployment.png
