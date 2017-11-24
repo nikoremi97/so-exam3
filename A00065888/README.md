@@ -5,6 +5,7 @@
 **Estudiante:** Nicolás Recalde M.
 **Tema:** Descubrimiento de servicios, Microservicios  
 **Correo:** daniel.barragan@correo.icesi.edu.co & nikoremi97@hotmail.com
+**URL:** https://github.com/nikoremi97/so-exam3.git
 
 ### Objetivos
 * Implementar servicios web que puedan ser consumidos por usuarios o aplicaciones
@@ -43,13 +44,37 @@ Por último, revisamos qué otros clientes al servidor de consul se han unido:
 ![][7]  
 ##
 Todo listo por parte de los servidores, ahora necesitamos configurar nuestro balanceador de carga que se encargará de distribuir las peticiones entre los servidores.  
-Como balanceador de carga usamos HAProxy. Para su configuración, usamos la guía de https://www.upcloud.com/support/haproxy-load-balancer-centos/ . Debemos configurar además los siguientes aspectos, agregar el nombre del *consul agent client*, su dirección IP.  
+Como balanceador de carga usamos HAProxy. Para su configuración, usamos la guía de https://www.upcloud.com/support/haproxy-load-balancer-centos/ .   
+Configurar HAproxy:
+``` 
+$ sudo mkdir -p /etc/haproxy
+$ sudo mkdir -p /var/lib/haproxy 
+$ sudo touch /var/lib/haproxy/stats
+$ sudo cp ~/haproxy-1.7.8/examples/haproxy.init /etc/init.d/haproxy
+$ sudo chmod 755 /etc/init.d/haproxy
+$ sudo systemctl daemon-reload
+$ sudo chkconfig haproxy on
+$ sudo useradd -r haproxy
+```  
+Abrir puertos
+```
+$ sudo firewall-cmd --permanent --zone=public --add-service=http
+$ sudo firewall-cmd --permanent --zone=public --add-port=8181/tcp
+$ sudo firewall-cmd --reload
+```  
+configure archivos y reload service
+```
+$ sudo vi /etc/haproxy/haproxy.cfg
+$ sudo systemctl restart haproxy
+```  
+Debemos configurar además los siguientes aspectos, agregar el nombre del *consul agent client*, su dirección IP.  
 ![][8]  
 Además en el Consul-template debemos poner el nombre del microservicio de cada servidor.  
 ![][9]  
 ## Referencias
 https://www.upcloud.com/support/haproxy-load-balancer-centos/
-
+https://github.com/ICESI/so-microservices-python
+https://github.com/ICESI/so-discovery-service/blob/master/README.md
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
 [3]: images/initiclient.JPG
