@@ -83,17 +83,20 @@ Realizando 3 peticiones al balanceador vemos como este rota los servidores para 
 ![][14]
 ## Punto 5  
 Si se quisiera agregar un microservicio al ambiente ya desplegador deberíamos entender dos conceptos importantes. El de paradigma reactivo, el de API Gateway y el de protocolo pubicador/subscriptor.  
+El paradigma reactivo, establece una nueva forma de atender solicitudes y puede aplicarse tanto a la parte de servidor como a la de clientes. Se trata de responder sólo con lo solicitado de manera asíncrona y óptima.
 ![][16]  
-El API Gateway "es el único punto de entrada para todos los clientes. La API Gateway maneja las solicitudes de una de dos maneras. Algunas solicitudes son simplemente proxy/enrutadas al servicio apropiado. Gestiona otras solicitudes desplegándose a múltiples servicios". Esto quiere decir que los clientes le harán todas las solicitudes al API Gateway y este se encargará de redirigir las solicitudes al balanceador de carga para cada microservicio (en caso de que todos tengan un balanceador de carga).  
+El API Gateway "es el único punto de entrada para todos los clientes. Algunas solicitudes son simplemente proxy/enrutadas al servicio apropiado. Gestiona otras solicitudes desplegándose a múltiples servicios". Esto quiere decir que usando el paradigma reactivo, los clientes le harán todas las solicitudes al API Gateway y este se encargará de redirigir las solicitudes al balanceador de carga para cada microservicio (en caso de que todos tengan un balanceador de carga).  
 El API Gateway se ilustra en la siguiente imagen:  
 ![][15]  
-Así vemos que ahora todos los clientes le realizan las peticiones al API Gateway. Entonces, en nuestro esquema inicial, el punto de entrada no sería el balanceador de carga, sino el API Gateway. 
+Así vemos que ahora todos los clientes le realizan las peticiones al API Gateway. Entonces, en nuestro esquema inicial, el punto de entrada no sería el balanceador de carga, sino el API Gateway. Éste redigirá las solicitudes a los balanceadores para que redistribuyan las solicitudes entre los servidores con el nuevo servicio. Y por último, está claro que se debe montar el servicio en los servidores y modificar algunas configuraciones de Consul, como el nombre del microservicio en sus templates.
 
 ## Referencias
 https://www.upcloud.com/support/haproxy-load-balancer-centos/  
 https://github.com/ICESI/so-microservices-python  
 https://github.com/ICESI/so-discovery-service/blob/master/README.md  
-http://microservices.io/patterns/apigateway.html
+http://microservices.io/patterns/apigateway.html  
+https://www.arquitecturajava.com/reactive-microservices-y-arquitectura/
+
 
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
