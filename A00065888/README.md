@@ -21,7 +21,7 @@ El tercer parcial del curso sistemas operativos trata sobre la creación de serv
 
 **Figura 1.** Despliegue básico de microservicios
 
-### Desarrollo  
+## Desarrollo  
 Mediante la conexión de diferentes máquinas virtuales en los computadores de algunos compañeros, se desplegó el siguiente esquema de balanceador de carga y descubrimiento de servicios:  
 ![][1]  
 Primero tenemos un **Balanceador de Carga** que hace peticiones a un servidor **Consul server** que usa un servicio de **Discovery Service**, el cual a su vez hace peticiones a tres **Consul Client** que prestan un microservicio similar. Para un posterior diferenciador de los servicios, modificamos un mensaje inicial, pero si se quisiera prestar el mismo microservicio mediante todos los servidores el microservicio debería ser idéntico.  
@@ -34,12 +34,17 @@ Aquí el servidor se vuelve un *Consul agent client*.
 ![][3]  
 Ahora el servidor se subscribe a un *Consul agent Server*
 ![][4]  
+##
 Por el lado del Consul agent server se realiza lo siguiente:  
 ![][5]  
 Cuando un agent client se le une, es notificado:  
-![][6]
-Por último, revisamos qué otros clientes al servidor de consul se han unido:  
-![][7]
+![][6]  
+Por último, revisamos qué otros clientes al servidor de consul se han unido:    
+![][7]  
+##
+Todo listo por parte de los servidores, ahora necesitamos configurar nuestro balanceador de carga que se encargará de distribuir las peticiones entre los servidores.  
+
+## Referencias
 
 
 [1]: images/Microservices_Deployment.png
