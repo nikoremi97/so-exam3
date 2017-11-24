@@ -82,13 +82,18 @@ Realizando 3 peticiones al balanceador vemos como este rota los servidores para 
 ![][13]
 ![][14]
 ## Punto 5  
-
-
+Si se quisiera agregar un microservicio al ambiente ya desplegador deberíamos entender dos conceptos importantes. El de paradigma reactivo, el de API Gateway y el de protocolo pubicador/subscriptor.  
+![][16]  
+El API Gateway "es el único punto de entrada para todos los clientes. La API Gateway maneja las solicitudes de una de dos maneras. Algunas solicitudes son simplemente proxy/enrutadas al servicio apropiado. Gestiona otras solicitudes desplegándose a múltiples servicios". Esto quiere decir que los clientes le harán todas las solicitudes al API Gateway y este se encargará de redirigir las solicitudes al balanceador de carga para cada microservicio (en caso de que todos tengan un balanceador de carga).  
+El API Gateway se ilustra en la siguiente imagen:  
+![][15]  
+Así vemos que ahora todos los clientes le realizan las peticiones al API Gateway. Entonces, en nuestro esquema inicial, el punto de entrada no sería el balanceador de carga, sino el API Gateway. 
 
 ## Referencias
 https://www.upcloud.com/support/haproxy-load-balancer-centos/  
 https://github.com/ICESI/so-microservices-python  
-https://github.com/ICESI/so-discovery-service/blob/master/README.md
+https://github.com/ICESI/so-discovery-service/blob/master/README.md  
+http://microservices.io/patterns/apigateway.html
 
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
@@ -104,5 +109,7 @@ https://github.com/ICESI/so-discovery-service/blob/master/README.md
 [12]: images/loadbalancer1.JPG
 [13]: images/loadbalancer2.JPG
 [14]: images/loadbalancer3.JPG
+[15]: images/apigateway.JPG 
+[16]: images/ReactiveMicroServicesRx.jpg
 
 
