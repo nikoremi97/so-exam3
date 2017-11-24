@@ -75,6 +75,7 @@ Además en el Consul-template debemos poner el nombre del microservicio de cada 
 https://www.upcloud.com/support/haproxy-load-balancer-centos/
 https://github.com/ICESI/so-microservices-python
 https://github.com/ICESI/so-discovery-service/blob/master/README.md
+
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
 [3]: images/initiclient.JPG
