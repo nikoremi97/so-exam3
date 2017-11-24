@@ -34,15 +34,21 @@ Aquí el servidor se vuelve un *Consul agent client*.
 ![][3]  
 Ahora el servidor se subscribe a un *Consul agent Server*
 ![][4]  
-
-
+Por el lado del Consul agent server se realiza lo siguiente:  
+![][5]  
+Cuando un agent client se le une, es notificado:  
+![][6]
+Por último, revisamos qué otros clientes al servidor de consul se han unido:  
+![][7]
 
 
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
-[3]: images/initclient.JPG
+[3]: images/initiclient.JPG
 [4]: images/consuljoin.JPG
-
+[5]: images/consul_agent_server.PNG
+[6]: images/consul_logs.PNG	
+[7]: images/consul_members.PNG
 
 
 
