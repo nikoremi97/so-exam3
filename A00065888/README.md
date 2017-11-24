@@ -23,6 +23,7 @@ El tercer parcial del curso sistemas operativos trata sobre la creación de serv
 **Figura 1.** Despliegue básico de microservicios
 
 ## Desarrollo  
+## Punto 3
 Mediante la conexión de diferentes máquinas virtuales en los computadores de algunos compañeros, se desplegó el siguiente esquema de balanceador de carga y descubrimiento de servicios:  
 ![][1]  
 Primero tenemos un **Balanceador de Carga** que hace peticiones a un servidor **Consul server** que usa un servicio de **Discovery Service**, el cual a su vez hace peticiones a tres **Consul Client** que prestan un microservicio similar. Para un posterior diferenciador de los servicios, modificamos un mensaje inicial, pero si se quisiera prestar el mismo microservicio mediante todos los servidores el microservicio debería ser idéntico.  
@@ -71,6 +72,16 @@ Debemos configurar además los siguientes aspectos, agregar el nombre del *consu
 ![][8]  
 Además en el Consul-template debemos poner el nombre del microservicio de cada servidor.  
 ![][9]  
+Ahora verificamos que el balanceador esté funcionando.  
+![][10]  
+## Punto 4  
+En el punto anterior se describió que se iba a montar el mismo servicio en los 3 servidores pero con un mensaje difernciador. Esto nos sirve para corroborar que el balanceador está cumpliendo bien su trabajo. El balanceador utiliza un método de balanceo llamado *round-robin*, mediante el cual se asigna un servidor diferente a cada solicitud realizada al balanceador hasta repetirse el primer servidor y así sucesivamente.  
+![][11]  
+Realizando 3 peticiones al balanceador vemos como este rota los servidores para la atención a la solicitud del cliente:  
+![][12]
+![][13]
+![][14]
+
 ## Referencias
 https://www.upcloud.com/support/haproxy-load-balancer-centos/
 https://github.com/ICESI/so-microservices-python
@@ -85,6 +96,10 @@ https://github.com/ICESI/so-discovery-service/blob/master/README.md
 [7]: images/consul_members.PNG
 [8]: images/configuracionBalanceador.png
 [9]: images/configuracionConsulTemplates.png
-
+[10]: images/BalanceadorCorriendo.png
+[11]: images/DemostracionFuncionBalanceador.png
+[12]: images/loadbalancer1.JPG
+[13]: images/loadbalancer2.JPG
+[14]: images/loadbalancer3.JPG
 
 
