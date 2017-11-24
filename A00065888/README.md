@@ -43,9 +43,12 @@ Por último, revisamos qué otros clientes al servidor de consul se han unido:
 ![][7]  
 ##
 Todo listo por parte de los servidores, ahora necesitamos configurar nuestro balanceador de carga que se encargará de distribuir las peticiones entre los servidores.  
-
+Como balanceador de carga usamos HAProxy. Para su configuración, usamos la guía de https://www.upcloud.com/support/haproxy-load-balancer-centos/ . Debemos configurar además los siguientes aspectos, agregar el nombre del *consul agent client*, su dirección IP.  
+![][8]  
+Además en el Consul-template debemos poner el nombre del microservicio de cada servidor.  
+![][9]  
 ## Referencias
-
+https://www.upcloud.com/support/haproxy-load-balancer-centos/
 
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
@@ -54,6 +57,8 @@ Todo listo por parte de los servidores, ahora necesitamos configurar nuestro bal
 [5]: images/consul_agent_server.PNG
 [6]: images/consul_logs.PNG	
 [7]: images/consul_members.PNG
+[8]: images/configuracionBalanceador.png
+[9]: images/configuracionConsulTemplates.png
 
 
 
