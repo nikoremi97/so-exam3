@@ -1,10 +1,10 @@
 ### Examen 3
 **Universidad ICESI**  
-**Curso:** Sistemas Operativos
-**Docente:** Daniel Barragán C. 
-**Estudiante:** Nicolás Recalde M.
+**Curso:** Sistemas Operativos  
+**Docente:** Daniel Barragán C.  
+**Estudiante:** Nicolás Recalde M.  
 **Tema:** Descubrimiento de servicios, Microservicios  
-**Correo:** daniel.barragan@correo.icesi.edu.co & nikoremi97@hotmail.com
+**Correo:** daniel.barragan@correo.icesi.edu.co & nikoremi97@hotmail.com  
 **URL:** https://github.com/nikoremi97/so-exam3.git
 
 ### Objetivos
