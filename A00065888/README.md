@@ -24,7 +24,7 @@ El tercer parcial del curso sistemas operativos trata sobre la creación de serv
 ### Desarrollo  
 Se desplegó el siguiente esquema, se utilizó Flask como servicio web:  
 ![][1]  
-
+w
 
 
 
