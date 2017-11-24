@@ -113,6 +113,6 @@ https://www.arquitecturajava.com/reactive-microservices-y-arquitectura/
 [13]: images/loadbalancer2.JPG
 [14]: images/loadbalancer3.JPG
 [15]: images/ReactiveMicroServicesRx.jpg
-[16]: images/apigateway.JPG 
+[16]: images/apigateway.jpg 
 
 
