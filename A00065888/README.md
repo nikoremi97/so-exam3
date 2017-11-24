@@ -29,10 +29,19 @@ Lo que pretende hacer este sistema es lo siguiente: un cliente, como un *Web Bro
 El montaje del sistema se realizó de la siguiente forma:  
 Cada servidor presta el siguiente microservicio:  
 ![][2]  
+Cada servidor se subscribe como un *Consul agent client* a un *Consul agent server*.  
+Aquí el servidor se vuelve un *Consul agent client*.
+![][3]  
+Ahora el servidor se subscribe a un *Consul agent Server*
+![][4]  
+
+
 
 
 [1]: images/Microservices_Deployment.png
 [2]: images/operationspython.JPG
+[3]: images/initclient.JPG
+[4]: images/consuljoin.JPG
 
 
 
